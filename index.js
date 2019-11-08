@@ -41,7 +41,26 @@ class Airplane {
 */
 
 class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
+  }
+  person.prototype.eat("someFood");
 
+Person.prototype.eat = function(someFood) {
+  if (this.stomach.length < 10) {
+    this.stomach.push(someFood);
+  }; 
+}
+
+Person.prototype.poop = function() {
+    this.stomach = [];
+};
+
+Person.prototype.toString = function() {
+  return `${this.name}, ${this.age}`;
+}
 }
 
 /*
@@ -59,7 +78,28 @@ class Person {
 */
 
 class Car {
-
+  constructor(model, milesPerGallon) {
+    this.model = model;
+    this.milesPerGallon = milesPerGallon;
+    this.tank = 0;
+    this.odometer = 0;
+  
+  }
+  
+  Car.prototype.fill = function(gallons) {
+    this.tank = this.tank+gallons;
+  }
+  
+  Car.prototype.drive = function(distance) {
+    this.odometer = this.odometer+distance;
+    if (this.tank > 0) {
+      this.tank = this.tank-(distance/this.milesPerGallon);
+    } else {
+      this.tank = 0;
+      this.odometer = this.odometer + (this.tank*this.gallons)
+      return `I ran out of fuel at ${this.odometer} miles!`
+    }
+  }
 }
 
 /*
@@ -75,7 +115,14 @@ class Car {
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
-
+  constructor(name, age, location) {
+    this.name = name;
+    this.age = age;
+    this.location = location;
+  }
+  speaks(){
+    return `Hello my name is ${this.name}, ${this.location}!`;
+  }
 }
 
 /*
@@ -93,7 +140,17 @@ class Lambdasian {
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
 class Instructor {
-
+  constructor(specialty, favLanguage, catchPhrase){
+    this.specialty = specialty;
+    this.favLanguage = favLanguage;
+    this.catchPhrase = catchPhrase;
+  }
+  demo(){
+    return `Today we are learning about ${this.specialty}`
+  }
+  grade(){
+    return ``
+  }
 }
 
 /*
