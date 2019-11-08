@@ -121,7 +121,7 @@ class Lambdasian {
     this.location = location;
   }
   speaks(){
-    return `${this.name} says ${this.location}!`;
+    return `Hello my name is ${this.name}, ${this.location}!`;
   }
 }
 
@@ -144,6 +144,12 @@ class Instructor {
     this.specialty = specialty;
     this.favLanguage = favLanguage;
     this.catchPhrase = catchPhrase;
+  }
+  demo(){
+    return `Today we are learning about ${this.specialty}`
+  }
+  grade(){
+    return ``
   }
 }
 
